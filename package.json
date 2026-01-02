@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "tauri dev",
     "build": "tauri build",
+    "tauri": "tauri",
     "build:windows": "tauri build --target x86_64-pc-windows-msvc",
-    "build:macos": "tauri build --target universal-apple-darwin",
+    "build:macos": "tauri build --target aarch64-apple-darwin",
     "build:linux": "tauri build --target x86_64-unknown-linux-gnu"
   },
   "devDependencies": {
