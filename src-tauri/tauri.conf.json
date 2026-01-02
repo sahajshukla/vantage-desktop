@@ -83,12 +83,7 @@
       "dangerousDisableAssetCspModification": true
     },
     "updater": {
-      "active": true,
-      "endpoints": [
-        "https://releases.vantageauditos.com/desktop/{{target}}/{{arch}}/{{current_version}}"
-      ],
-      "dialog": true,
-      "pubkey": "YOUR_UPDATER_PUBKEY_HERE"
+      "active": false
     },
     "windows": [
       {
