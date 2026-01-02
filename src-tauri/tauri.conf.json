@@ -1,0 +1,109 @@
+{
+  "build": {
+    "beforeBuildCommand": "",
+    "beforeDevCommand": "",
+    "devPath": "https://app.vantageauditos.com",
+    "distDir": "../src"
+  },
+  "package": {
+    "productName": "Vantage AuditOS",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "open": true
+      },
+      "window": {
+        "all": true
+      },
+      "dialog": {
+        "all": true,
+        "ask": true,
+        "confirm": true,
+        "message": true,
+        "open": true,
+        "save": true
+      },
+      "fs": {
+        "all": true,
+        "scope": ["$APPDATA/*", "$HOME/.vantage/*"]
+      },
+      "path": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "Business",
+      "copyright": "Copyright 2024 Vantage AuditOS. All rights reserved.",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.vantageauditos.app",
+      "longDescription": "Enterprise-grade audit management software for internal audit teams. Streamline your audit lifecycle with AI-powered risk assessment, workpaper management, and compliance tracking.",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null,
+        "minimumSystemVersion": "10.15"
+      },
+      "resources": [],
+      "shortDescription": "Internal Audit Management Platform",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "wix": null,
+        "nsis": {
+          "installerIcon": "icons/icon.ico",
+          "headerImage": null,
+          "sidebarImage": null,
+          "license": null,
+          "installMode": "currentUser",
+          "languages": ["English"],
+          "displayLanguageSelector": false
+        }
+      }
+    },
+    "security": {
+      "csp": null,
+      "dangerousDisableAssetCspModification": true
+    },
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://releases.vantageauditos.com/desktop/{{target}}/{{arch}}/{{current_version}}"
+      ],
+      "dialog": true,
+      "pubkey": "YOUR_UPDATER_PUBKEY_HERE"
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 800,
+        "width": 1400,
+        "minHeight": 600,
+        "minWidth": 1000,
+        "resizable": true,
+        "title": "Vantage AuditOS",
+        "center": true,
+        "decorations": true,
+        "transparent": false,
+        "visible": false
+      }
+    ]
+  }
+}

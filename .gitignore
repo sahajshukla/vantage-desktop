@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Rust
+src-tauri/target/
+**/*.rs.bk
+
+# Build outputs
+dist/
+*.dmg
+*.exe
+*.msi
+*.deb
+*.AppImage
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Signing keys (NEVER commit these!)
+*.key
+*.pem
+*.p12
+*.pfx

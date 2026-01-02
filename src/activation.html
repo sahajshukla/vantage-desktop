@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Vantage AuditOS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo p {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #86efac;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .version {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 11px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="64" height="64" rx="12" fill="url(#gradient)"/>
+                <path d="M 16 16 L 32 48 L 48 16 L 40 16 L 32 36 L 24 16 Z" fill="white"/>
+                <defs>
+                    <linearGradient id="gradient" x1="0" y1="0" x2="64" y2="64">
+                        <stop offset="0%" stop-color="#9333ea"/>
+                        <stop offset="100%" stop-color="#6b21a8"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <h1>Vantage AuditOS</h1>
+            <p>Enterprise Audit Management</p>
+        </div>
+
+        <div class="card">
+            <h2>Activate Your License</h2>
+
+            <div id="error-message" class="error-message"></div>
+            <div id="success-message" class="success-message"></div>
+
+            <form id="activation-form">
+                <div class="form-group">
+                    <label for="license-key">License Key</label>
+                    <input
+                        type="text"
+                        id="license-key"
+                        placeholder="XXXX-XXXX-XXXX-XXXX"
+                        autocomplete="off"
+                        spellcheck="false"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@company.com"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                    <span class="btn-content">
+                        <span class="spinner" id="spinner"></span>
+                        <span id="btn-text">Activate License</span>
+                    </span>
+                </button>
+            </form>
+
+            <div class="footer">
+                <p>Need a license? <a href="https://vantageauditos.com/pricing" target="_blank">View Pricing</a></p>
+                <p style="margin-top: 8px;">
+                    <a href="https://vantageauditos.com/support" target="_blank">Contact Support</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="version" id="version-info">Loading...</div>
+    </div>
+
+    <script>
+        const { invoke } = window.__TAURI__.tauri;
+
+        // Display app info
+        async function displayAppInfo() {
+            try {
+                const info = await invoke('get_app_info');
+                document.getElementById('version-info').textContent =
+                    `Version ${info.version} | ${info.platform} (${info.arch})`;
+            } catch (e) {
+                console.error('Failed to get app info:', e);
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('activation-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const licenseKey = document.getElementById('license-key').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const errorEl = document.getElementById('error-message');
+            const successEl = document.getElementById('success-message');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btn-text');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Reset messages
+            errorEl.style.display = 'none';
+            successEl.style.display = 'none';
+
+            // Show loading state
+            spinner.style.display = 'block';
+            btnText.textContent = 'Activating...';
+            submitBtn.disabled = true;
+
+            try {
+                const result = await invoke('activate_license', {
+                    licenseKey: licenseKey,
+                    email: email
+                });
+
+                successEl.textContent = `License activated for ${result.organization}!`;
+                successEl.style.display = 'block';
+
+                // Redirect to main app after success
+                setTimeout(() => {
+                    window.location.href = 'https://app.vantageauditos.com';
+                }, 1500);
+
+            } catch (error) {
+                errorEl.textContent = error;
+                errorEl.style.display = 'block';
+            } finally {
+                spinner.style.display = 'none';
+                btnText.textContent = 'Activate License';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Format license key input
+        document.getElementById('license-key').addEventListener('input', (e) => {
+            let value = e.target.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+            let formatted = '';
+            for (let i = 0; i < value.length && i < 16; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formatted += '-';
+                }
+                formatted += value[i];
+            }
+            e.target.value = formatted;
+        });
+
+        // Initialize
+        displayAppInfo();
+    </script>
+</body>
+</html>

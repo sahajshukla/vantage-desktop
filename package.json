@@ -1,0 +1,21 @@
+{
+  "name": "vantage-auditos-desktop",
+  "version": "1.0.0",
+  "description": "Vantage AuditOS Desktop Application",
+  "author": "Vantage AuditOS",
+  "license": "PROPRIETARY",
+  "private": true,
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "build:windows": "tauri build --target x86_64-pc-windows-msvc",
+    "build:macos": "tauri build --target universal-apple-darwin",
+    "build:linux": "tauri build --target x86_64-unknown-linux-gnu"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.5.9"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.5.3"
+  }
+}
